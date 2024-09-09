@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddFragment">
+
+    <EditText
+        android:id="@+id/textTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="What to do?"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/dateBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="10/12/1990"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+
+    <Button
+        android:id="@+id/timeBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="10:12"
+        android:layout_margin="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:background="#09680D"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="10dp"
+        android:textStyle="bold"/>
+
+
+</LinearLayout>
