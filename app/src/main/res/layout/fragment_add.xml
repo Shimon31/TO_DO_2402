@@ -4,47 +4,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#09240A"
     tools:context=".AddFragment">
 
     <EditText
         android:id="@+id/textTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="What to do?"
-        android:textAlignment="center"
         android:layout_margin="10dp"
-        android:textColor="@color/black"/>
+        android:hint="What to do?"
+        android:background="@drawable/background"
+        android:padding="8dp"
+        android:textAlignment="center" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dateBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="10/12/1990"
         android:layout_margin="10dp"
+        android:backgroundTint="#FB9805"
+        android:background="@drawable/background"
+        android:text="Pick A Date"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/timeBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="10:12"
         android:layout_margin="10dp"
+        android:text="Pick a time"
+        android:backgroundTint="#FB9805"
+        android:background="@drawable/background"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submitBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:background="#09680D"
-        android:layout_marginTop="50dp"
-        android:textColor="@color/white"
         android:layout_marginHorizontal="10dp"
-        android:textStyle="bold"/>
+        android:layout_marginTop="50dp"
+        android:background="@drawable/background"
+        android:backgroundTint="#09680D"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
