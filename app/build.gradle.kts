@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -57,4 +58,13 @@ dependencies {
     // Views/Fragments integration
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
+
+
+    var room_version = "2.5.1"
+
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor (libs.androidx.room.compiler)
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt ("androidx.room:room-compiler:$room_version")
 }
