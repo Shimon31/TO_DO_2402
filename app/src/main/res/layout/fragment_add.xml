@@ -7,6 +7,8 @@
     android:background="#09240A"
     tools:context=".AddFragment">
 
+
+
     <EditText
         android:id="@+id/textTV"
         android:layout_width="match_parent"
@@ -41,6 +43,7 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold" />
+
 
 
     <androidx.appcompat.widget.AppCompatButton

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.example.todolist2402.databinding.FragmentAddBinding
 import java.util.Calendar
@@ -51,6 +52,9 @@ class AddFragment : Fragment() {
 
             val note = Note(title = titleStr, time = timeStr, date = dateStr)
             database.getNoteDao().insertData(note)
+
+            findNavController().navigate(R.id.action_addFragment_to_homeFragment)
+
         }
 
         return binding.root
