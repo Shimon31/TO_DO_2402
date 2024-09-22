@@ -10,11 +10,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.room.Room
 import com.example.todolist2402.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(),NoteAdapter.NoteEdit {
 
 lateinit var binding: FragmentHomeBinding
 
-    lateinit var database: NoteDataBase
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,16 +24,20 @@ lateinit var binding: FragmentHomeBinding
         binding = FragmentHomeBinding.inflate(layoutInflater,container,false)
 
 
-        database = Room.databaseBuilder(requireActivity(), NoteDataBase::class.java, "Note-DB")
-            .allowMainThreadQueries().build()
-
-       val notes : List<Note> = database.getNoteDao().getAllData()
-
-           val adapter = NoteAdapter()
-           adapter.submitList(notes)
+       val notes : List<Note> = NoteDataBase.getDb(requireContext()).getNoteDao().getAllData()
 
 
-           binding.recyclerView.adapter = adapter
+        notes.let {
+
+            val adapter = NoteAdapter(this)
+            adapter.submitList(notes)
+
+
+            binding.recyclerView.adapter = adapter
+
+        }
+
+
 
 
         binding.addBtn.setOnClickListener {
@@ -44,6 +48,15 @@ lateinit var binding: FragmentHomeBinding
         }
 
         return binding.root
+    }
+
+    override fun onNoteEdit(note: Note) {
+
+        var bundle = Bundle()
+        bundle.putInt("note",note.id)
+
+        findNavController().navigate(R.id.action_homeFragment_to_addFragment,bundle)
+
     }
 
 }
